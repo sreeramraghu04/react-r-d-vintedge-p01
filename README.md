@@ -21,8 +21,8 @@
 8. relative link ?
 
 - pending:
-  usesearchparams / queryparams
-  hook = use search params
-  uselocation
-  loader function
-  usenavigate
+  - usesearchparams / queryparams
+  - hook = use search params
+  - uselocation
+  - loader function
+  - usenavigate
