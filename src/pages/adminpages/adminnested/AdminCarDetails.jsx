@@ -24,7 +24,7 @@ const AdminCarDetails = () => {
             Price: <span className="text-green-400">{car.price}</span>
           </p>
           <p>Range: {car.range}</p>
-          <p>Year: {car.year}</p>
+          <p>Model: {car.model}</p>
         </div>
         <Link
           to=".."
@@ -42,8 +42,10 @@ const AdminCarDetails = () => {
         </h3>
         <ul className="text-gray-300 space-y-2">
           <li>Cars Details: {car.details}</li>
-          <li>Restoration Cost: ₹3,00,000</li>
-          <li>Tax & Registration: ₹75,000</li>
+          <li>Cars Year: {car.year}</li>
+          <li>Cars Series: {car.series}</li>
+          <li>Restoration Cost: {car.restoration}</li>
+          <li>Tax & Registration: {car.registration}</li>
         </ul>
       </div>
     </div>

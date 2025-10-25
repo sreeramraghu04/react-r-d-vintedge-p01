@@ -5,7 +5,7 @@ const AdminLayout = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black text-white">
       {/* 👇 Admin navbar (secondary navbar) */}
-      <nav className="flex overflow-x-auto whitespace-nowrap lg:justify-start justify-center items-center px-4 sm:px-8 py-6 mt-[40px] bg-black/50 backdrop-blur-md border-b border-purple-700/40 shadow-md rounded-b-lg">
+      <nav className="flex overflow-x-auto whitespace-nowrap lg:justify-start justify-center items-center px-4 sm:px-14 py-6 mt-[50px] bg-black/50 backdrop-blur-md border-b border-purple-700/40 shadow-md rounded-b-lg">
         <div className="flex gap-4 sm:gap-6 text-lg  font-mono">
           <NavLink
             to="."

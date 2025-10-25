@@ -1,10 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { cars } from "../../data/carsData";
-import { Link } from "react-router-dom";
-import AdminCarLayout from "../../components/AdminCarLayout";
+import AdminCarNavbar from "../../components/AdminCarNavbar";
 
-const AdminSingleCar = () => {
+const AdminCarsSingle = () => {
   const { id } = useParams();
   // console.log(params);
   const car = cars.find((item) => Number(item.id) === Number(id));
@@ -13,10 +12,10 @@ const AdminSingleCar = () => {
   return (
     <div>
       <div>
-        <AdminCarLayout />
+        <AdminCarNavbar />
       </div>
     </div>
   );
 };
 
-export default AdminSingleCar;
+export default AdminCarsSingle;

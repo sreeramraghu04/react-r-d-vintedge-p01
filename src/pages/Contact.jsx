@@ -1,4 +1,3 @@
-
 export default function Contact() {
   return (
     <div className="p-6 sm:p-10 md:p-16 text-center min-h-screen flex flex-col items-center justify-center">

@@ -8,7 +8,6 @@ const Admin = () => {
       <Helmet>
         <title>Admin - VintEdge</title>
       </Helmet>
-      {/* Outlet inside AdminLayout will render nested routes */}
       <AdminLayout />
     </div>
   );

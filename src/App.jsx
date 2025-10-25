@@ -7,10 +7,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/adminpages/AdminDashboard";
 import AdminIncome from "./pages/adminpages/AdminIncome";
-import AdminCars from "./pages/adminpages/AdminCars";
+import AdminAllCars from "./pages/adminpages/AdminAllCars";
 import AdminReview from "./pages/adminpages/AdminReview";
-import AdminLayout from "./components/AdminLayout";
-import AdminSingleCar from "./pages/adminpages/AdminSingleCar";
+import AdminNavbar from "./components/AdminNavbar";
+import AdminCarsSingle from "./pages/adminpages/AdminCarsSingle";
 import PageNotFound from "./pages/PageNotFound";
 import AdminCarDetails from "./pages/adminpages/adminnested/AdminCarDetails";
 import AdminCarPricing from "./pages/adminpages/adminnested/AdminCarPricing";
@@ -29,14 +29,14 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
 
-          <Route path="admin" element={<AdminLayout />}>
+          <Route path="admin" element={<AdminNavbar />}>
             <Route index element={<AdminDashboard />} />
             <Route path="income" element={<AdminIncome />} />
             <Route path="income/:id" element={<AdminIncomeChart />} />
             <Route path="review" element={<AdminReview />} />
-            <Route path="allcars" element={<AdminCars />} />
+            <Route path="allcars" element={<AdminAllCars />} />
 
-            <Route path="allcars/:id" element={<AdminSingleCar />}>
+            <Route path="allcars/:id" element={<AdminCarsSingle />}>
               <Route index element={<AdminCarDetails />} />
               <Route path="pricing" element={<AdminCarPricing />} />
               <Route path="photos" element={<AdminCarPhotos />} />
