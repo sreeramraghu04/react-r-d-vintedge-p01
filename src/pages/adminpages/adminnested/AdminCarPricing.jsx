@@ -45,7 +45,14 @@ const AdminCarPricing = () => {
           <li>Restoration Cost: {car.restoration}</li>
           <li>Tax & Registration: {car.registration}</li>
           <li className="text-green-400 font-semibold">
-            Total Value: ₹{car.price} + {car.registration} + {car.restoration}
+            <p>
+              Total Value: ₹
+              {(
+                Number(String(car.price).replace(/[^0-9]/g, "")) +
+                Number(String(car.restoration).replace(/[^0-9]/g, "")) +
+                Number(String(car.registration).replace(/[^0-9]/g, ""))
+              ).toLocaleString("en-IN")}
+            </p>
           </li>
         </ul>
       </div>
