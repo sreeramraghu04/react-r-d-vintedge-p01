@@ -45,7 +45,7 @@ const AdminCarPricing = () => {
           <li>Restoration Cost: {car.restoration}</li>
           <li>Tax & Registration: {car.registration}</li>
           <li className="text-green-400 font-semibold">
-            Total Value: ₹{Number(car.price.replace(/[^0-9]/g, "")) + 375000}
+            Total Value: ₹{Number(car.price) + (car.restoration) + (car.restoration)}
           </li>
         </ul>
       </div>
