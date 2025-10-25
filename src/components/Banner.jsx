@@ -7,83 +7,36 @@ import img5 from "../assets/img5.jpg";
 import Slider from "react-slick";
 
 export default function SimpleSlider() {
-  var settings = {
-    dots: true,
+  const settings = {
+    dots: false, // looks cleaner as background
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true, //* Optional - auto slide
-    autoplaySpeed: 3000, //* 3 Seconds
-    arrows: false, //* Optional - hides prev/next
+    autoplay: true,
+    autoplaySpeed: 4000,
+    fade: true, // smooth fade transition
+    arrows: false,
+    pauseOnHover: false,
   };
+
+  const images = [img1, img2, img3, img4, img5];
+
   return (
-    <Slider {...settings}>
-      <div className="bg-stone-800 relative h-[30vh]">
-        <img
-          src={img1}
-          alt=""
-          className="w-[100vw] h-[500px] object-cover absolute mix-blend-overlay"
-        />
-        <div className="flex justify-start pt-24 text-white flex-col gap-6 items-center">
-          <h1 className="font-bold text-7xl tracking-wide">your move</h1>
-          <p className="text-2xl font-semibold tracking-wider font-title">
-            power with future
-          </p>
-        </div>
-      </div>
-      <div className="bg-stone-800 relative h-[30vh]">
-        <img
-          src={img2}
-          alt=""
-          className="w-[100vw] h-[500px] object-cover absolute mix-blend-overlay"
-        />
-        <div className="flex justify-start pt-24 text-white flex-col gap-6 items-center">
-          <h1 className="font-bold text-7xl tracking-wide">perfect touch</h1>
-          <p className="text-2xl font-semibold tracking-wider font-title">
-            perfectly organized
-          </p>
-        </div>
-      </div>
-      <div className="bg-stone-800 relative h-[30vh]">
-        <img
-          src={img3}
-          alt=""
-          className="w-[100vw] h-[500px] object-cover absolute mix-blend-overlay"
-        />
-        <div className="flex justify-start pt-24 text-white flex-col gap-6 items-center">
-          <h1 className="font-bold text-7xl tracking-wide">classic designed</h1>
-          <p className="text-2xl font-semibold tracking-wider font-title">
-            eligant in nature
-          </p>
-        </div>
-      </div>
-      <div className="bg-stone-800 relative h-[30vh]">
-        <img
-          src={img4}
-          alt=""
-          className="w-[100vw] h-[500px] object-cover absolute mix-blend-overlay"
-        />
-        <div className="flex justify-start pt-24 text-white flex-col gap-6 items-center">
-          <h1 className="font-bold text-7xl tracking-wide">featured tech</h1>
-          <p className="text-2xl font-semibold tracking-wider font-title">
-            more featured
-          </p>
-        </div>
-      </div>
-      <div className="bg-stone-800 relative h-[30vh]">
-        <img
-          src={img5}
-          alt=""
-          className="w-[100vw] h-[500px] object-cover absolute mix-blend-overlay"
-        />
-        <div className="flex justify-start pt-24 text-white flex-col gap-6 items-center">
-          <h1 className="font-bold text-7xl tracking-wide">latest one</h1>
-          <p className="text-2xl font-semibold tracking-wider font-title">
-            demanded with future
-          </p>
-        </div>
-      </div>
-    </Slider>
+    <div className="w-full h-screen relative overflow-hidden">
+      <Slider {...settings} className="h-screen">
+        {images.map((img, index) => (
+          <div key={index} className="relative w-full h-screen">
+            <img
+              src={img}
+              alt={`slide-${index}`}
+              className="w-full h-screen object-cover brightness-75"
+            />
+            {/* optional overlay if you need stronger darkness */}
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }

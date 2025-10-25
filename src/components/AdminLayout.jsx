@@ -3,11 +3,13 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const AdminLayout = () => {
   return (
-    <div>
-      <nav className="flex justify-start items-center px-6 py-4 bg-black/40 backdrop-blur-md shadow-lg">
-        <div className="flex gap-6 text-lg">
+    <div className="min-h-screen bg-gradient-to-b from-black via-purple-950/20 to-black text-white">
+      {/* 👇 Admin navbar (secondary navbar) */}
+      <nav className="flex overflow-x-auto whitespace-nowrap lg:justify-start justify-center items-center px-4 sm:px-8 py-6 mt-[40px] bg-black/50 backdrop-blur-md border-b border-purple-700/40 shadow-md rounded-b-lg">
+        <div className="flex gap-4 sm:gap-6 text-lg  font-mono">
           <NavLink
             to="."
+            end
             className={({ isActive }) =>
               isActive ? "underline text-red-500" : "text-purple-300"
             }
@@ -40,7 +42,11 @@ const AdminLayout = () => {
           </NavLink>
         </div>
       </nav>
-      <Outlet />
+
+      {/* 👇 Admin content */}
+      <div className="p-4 sm:p-6 pt-6 sm:pt-8">
+        <Outlet />
+      </div>
     </div>
   );
 };

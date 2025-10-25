@@ -2,10 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import ProductDetails from "./pages/ProductDetails";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Layout from "./components/Layout";
-import Banner from "./components/Banner";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AdminDashboard from "./pages/adminpages/AdminDashboard";
@@ -30,17 +27,12 @@ function App() {
           <Route path="cars/:id" element={<ProductDetails />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="banner" element={<Banner />} />
-
           <Route path="*" element={<PageNotFound />} />
 
           <Route path="admin" element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="income" element={<AdminIncome />} />
             <Route path="income/:id" element={<AdminIncomeChart />} />
-
             <Route path="review" element={<AdminReview />} />
             <Route path="allcars" element={<AdminCars />} />
 

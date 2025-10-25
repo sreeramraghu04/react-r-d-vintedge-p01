@@ -20,7 +20,6 @@ export default function AdminIncomeChart() {
     );
   }
 
-  // Example monthly income data
   const monthlyIncome = [
     { month: "Jan", amount: 1200 },
     { month: "Feb", amount: 1500 },
@@ -33,14 +32,14 @@ export default function AdminIncomeChart() {
   const totalIncome = monthlyIncome.reduce((sum, item) => sum + item.amount, 0);
 
   return (
-    <div className="p-6 max-w-5xl mx-auto">
+    <div className="p-4 sm:p-6 max-w-5xl mx-auto">
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Left Side: Car Info */}
+        {/* Left Side */}
         <div className="lg:w-1/2 bg-black/40 p-4 rounded-2xl border border-purple-700 shadow-lg">
           <img
             src={car.image}
             alt={car.name}
-            className="rounded-xl mb-3 w-full h-64 object-cover"
+            className="rounded-xl mb-3 w-full h-64 sm:h-80 object-cover"
           />
           <h2 className="text-2xl font-bold text-purple-300">{car.name}</h2>
           <p className="text-gray-400">{car.range}</p>
@@ -57,7 +56,7 @@ export default function AdminIncomeChart() {
           </Link>
         </div>
 
-        {/* Right Side: Income Breakdown */}
+        {/* Right Side */}
         <div className="lg:w-1/2 bg-black/30 p-4 rounded-2xl border border-purple-600 shadow-lg">
           <h3 className="text-xl font-bold text-purple-300 mb-4">
             Monthly Income Breakdown
@@ -83,7 +82,7 @@ export default function AdminIncomeChart() {
               ))}
             </tbody>
           </table>
-          {/* Placeholder for chart */}
+
           <div className="mt-6 h-48 flex items-center justify-center text-gray-500 border border-purple-600 rounded-lg">
             [Chart Placeholder]
           </div>

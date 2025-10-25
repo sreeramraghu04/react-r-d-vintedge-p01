@@ -6,7 +6,6 @@ export default function AdminCarReviews() {
   const { id } = useParams();
   const car = cars.find((item) => Number(item.id) === Number(id));
 
-  // Example reviews
   const reviews = [
     { id: 1, user: "John Doe", comment: "Amazing vintage car!" },
     {
@@ -22,12 +21,11 @@ export default function AdminCarReviews() {
   ];
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <div className="p-8">
-        <h2 className="text-3xl font-bold mb-6 text-purple-400 text-center">
-          Reviews
-        </h2>
-      </div>
+    <div className="p-4 sm:p-6 max-w-4xl mx-auto">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-400 text-center">
+        Reviews
+      </h2>
+
       <div className="space-y-4">
         {reviews.map((review) => (
           <div
@@ -39,10 +37,11 @@ export default function AdminCarReviews() {
           </div>
         ))}
       </div>
+
       <Link
         to=".."
         relative="path"
-        className="inline-block mt-6 px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-all"
+        className="inline-block mt-6 px-4 py-2 w-full sm:w-auto bg-purple-600 rounded-lg hover:bg-purple-700 transition-all text-center"
       >
         Back to Car List
       </Link>

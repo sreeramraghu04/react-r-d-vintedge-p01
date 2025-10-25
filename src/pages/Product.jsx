@@ -1,13 +1,19 @@
-import { cars } from "../data/carsData";
 import CarCard from "../components/CarCard";
+import { cars } from "../data/carsData";
+import { Helmet } from "react-helmet";
 
 export default function Product() {
   return (
-    <div className="p-8">
-      <h2 className="text-3xl font-bold mb-6 text-purple-400 text-center">
-        Available E-Cars
-      </h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="min-h-screen px-4 sm:px-8 lg:px-28 py-16 bg-gradient-to-b from-black via-purple-950/20 to-black text-white">
+      <Helmet>
+        <title>Cars - VintEdge</title>
+      </Helmet>
+
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-purple-400 mb-8 text-center">
+        Explore Vintage Cars
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {cars.map((car) => (
           <CarCard key={car.id} car={car} />
         ))}

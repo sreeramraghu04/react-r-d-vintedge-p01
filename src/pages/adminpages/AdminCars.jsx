@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 const AdminCars = () => {
   return (
-    <div className="p-8">
-      <h2 className="text-3xl font-bold mb-6 text-purple-400 text-center">
+    <div className="p-4 sm:p-6 max-w-7xl mx-auto">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-purple-400 text-center">
         Available Specs
       </h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {cars.map((car) => (
-          <Link to={`${car.id}`}>
-            <AdminCarCard key={car.id} car={car} />
+          <Link key={car.id} to={`${car.id}`}>
+            <AdminCarCard car={car} />
           </Link>
         ))}
       </div>

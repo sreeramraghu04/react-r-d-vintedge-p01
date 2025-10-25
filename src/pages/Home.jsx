@@ -1,36 +1,38 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-/* import { cars } from "../data/carsData";
-import CarCard from "../components/CarCard"; */
-import { useSearchParams } from "react-router-dom";
+import SimpleSlider from "../components/Banner";
 
 export default function Home() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams.get("type"));
-
   return (
-    <div className="flex flex-col items-center justify-center h-[80vh] text-center px-4">
+    <div className="relative w-full h-screen overflow-hidden text-white">
       <Helmet>
-        <title>home-vintedge</title>
+        <title>Home - VintEdge</title>
       </Helmet>
-      <h2 className="text-5xl font-extrabold mb-4 text-purple-400">
-        Welcome to VintEdge⚡
-      </h2>
-      <p className="text-gray-400 max-w-2xl mb-8">
-        Experience the past in motion. Explore legendary vintage cars —
-        restored, refined, and reimagined for today.
-      </p>
-      <Link
-        to="/cars"
-        className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full font-semibold transition-all"
-      >
-        Explore Cars
-      </Link>
-     {/*  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
-      </div> */}
+
+      {/* Banner */}
+      <div className="absolute inset-0">
+        <SimpleSlider />
+        <div className="absolute inset-0 bg-black/60 z-10" /> {/* overlay */}
+      </div>
+
+      {/* Hero content */}
+      <div className="relative z-20 flex flex-col items-center justify-center text-center h-full px-4 sm:px-6 md:px-12">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 text-purple-400 drop-shadow-lg">
+          Welcome to VintEdge⚡
+        </h1>
+
+        <p className="text-sm sm:text-lg md:text-xl lg:text-xl text-gray-200 max-w-3xl mb-8 leading-relaxed font-mono">
+          Where timeless craftsmanship meets futuristic innovation. Discover the
+          world of vintage cars — reimagined for today’s generation.
+        </p>
+
+        <Link
+          to="/cars"
+          className="px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 hover:bg-purple-700 rounded-full text-base sm:text-lg md:text-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-600/30 font-mono"
+        >
+          Explore Cars
+        </Link>
+      </div>
     </div>
   );
 }

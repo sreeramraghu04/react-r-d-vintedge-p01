@@ -6,11 +6,10 @@ const Admin = () => {
   return (
     <div>
       <Helmet>
-        <title>admin-vintedge</title>
+        <title>Admin - VintEdge</title>
       </Helmet>
-      <div>
-        <AdminLayout />
-      </div>
+      {/* Outlet inside AdminLayout will render nested routes */}
+      <AdminLayout />
     </div>
   );
 };
